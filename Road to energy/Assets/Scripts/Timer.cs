@@ -23,6 +23,7 @@ public class Timer : MonoBehaviour
         if (other.gameObject.CompareTag("UpTime"))
         {
             time_start += 20f;
+            Destroy(other.gameObject);
         }
     }
 }
