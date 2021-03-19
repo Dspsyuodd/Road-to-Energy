@@ -19,6 +19,14 @@ public class PlayerController : MonoBehaviour
     private bool isGround = false;
     private bool isJump = false;
 
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.CompareTag("Ground") && gameObject.CompareTag("Player"))
+        {
+            isGround = true;
+        }
+    }
+
     private void Start()
     {
         rb = GetComponent<Rigidbody2D>();
@@ -60,14 +68,5 @@ public class PlayerController : MonoBehaviour
         Vector2 playerScale = transform.localScale;
         playerScale.x *= -1;
         transform.localScale = playerScale;
-    }
-
-
-    private void OnCollisionEnter2D(Collision2D other)
-    {
-        if (other.gameObject.CompareTag("Ground"))
-        {
-            isGround = true;
-        }
     }
 }
