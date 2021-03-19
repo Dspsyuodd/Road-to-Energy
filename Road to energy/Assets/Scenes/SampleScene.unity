@@ -1294,6 +1294,7 @@ GameObject:
   - component: {fileID: 1247656305}
   - component: {fileID: 1247656309}
   - component: {fileID: 1247656310}
+  - component: {fileID: 1247656311}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -1428,6 +1429,22 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   TimerText: {fileID: 1396342795}
+--- !u!58 &1247656311
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1247656304}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: -0.103815235, y: -0.97865444}
+  serializedVersion: 2
+  m_Radius: 0.071871355
 --- !u!1 &1303939515
 GameObject:
   m_ObjectHideFlags: 0
@@ -1619,8 +1636,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 126.99997, y: -41.759964}
-  m_SizeDelta: {x: 223.29828, y: 200.6134}
+  m_AnchoredPosition: {x: 128.7, y: -39.7}
+  m_SizeDelta: {x: 608.35004, y: 200.6134}
   m_Pivot: {x: 0.5006776, y: 0.50120044}
 --- !u!114 &1396342795
 MonoBehaviour:
