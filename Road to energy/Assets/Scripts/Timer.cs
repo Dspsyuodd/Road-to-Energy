@@ -11,7 +11,7 @@ public class Timer : MonoBehaviour
     public GameObject HP;
 
     private float time_start = 60f;
-    private float deadLine = 50f;
+    [SerializeField] private float deadLine = 52f;
     public float Up_Time = 20f;
 
     public Text TimerText;
