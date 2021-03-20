@@ -8,21 +8,21 @@ public class Button_script : MonoBehaviour
 {
     public void Exit_game()
     {
-        Invoke("Quit", 1f);
+        Application.Quit();
     }
 
     public void Start_game()
     {
-        Invoke("NextScene", 1f);
-    }
-
-    private void Quit()
-    {
-        Application.Quit();
-    }
-
-    private void NextScene()
-    {
         SceneManager.LoadScene(1);
     }
+
+    public void Restart()
+    {
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+    }
+    public void Exit_to_menu()
+    {
+        SceneManager.LoadScene(0);
+    }
+
 }
