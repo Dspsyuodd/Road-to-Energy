@@ -9,14 +9,15 @@ public class Timer : MonoBehaviour
 
     public GameObject Plane;
     public GameObject HP;
-    public static bool GameStop = false;
+
     private float time_start = 60f;
     private float deadLine = 50f;
     public float Up_Time = 20f;
+
     public Text TimerText;
+
     void Start()
     {
-        time_start = 60f;
         TimerText.text = time_start.ToString();
     }
 
@@ -26,15 +27,11 @@ public class Timer : MonoBehaviour
         {
             time_start -= Time.deltaTime;
             TimerText.text = Mathf.Round(time_start).ToString();
-
         }
         else
         {
-            Plane.SetActive(true);
-            Time.timeScale = 0f;
-            GameStop = !GameStop;
-
-}
+            Game_over();
+        }
     }
     private void OnCollisionEnter2D(Collision2D other)
     {
@@ -44,18 +41,27 @@ public class Timer : MonoBehaviour
             Destroy(other.gameObject);
         }
     }
+    void Game_over()
+    {
+        Plane.SetActive(true);
+        HP.SetActive(false);
+        Time.timeScale = 0f;
+        Pause_script.GameIsPause = true;
+    }
+
     public void Restart()
     {
-        
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
-        GameStop = !GameStop;
+        time_start = 60f;
         Time.timeScale = 1f;
-
+        Pause_script.GameIsPause = false;
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
     }
+    
     public void Menu()
     {
-        SceneManager.LoadScene(0);
+        Pause_script.GameIsPause = false;
         Time.timeScale = 1f;
-        GameStop = !GameStop;
+        time_start = 60f;
+        SceneManager.LoadScene(0);   
     }
 }
