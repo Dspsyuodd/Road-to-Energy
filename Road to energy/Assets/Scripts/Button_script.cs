@@ -20,9 +20,17 @@ public class Button_script : MonoBehaviour
     {
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
     }
+
     public void Exit_to_menu()
     {
         SceneManager.LoadScene(0);
     }
-
+    public void Level2()
+    {
+        SceneManager.LoadScene(2);
+    }
+    public void Level3()
+    {
+        SceneManager.LoadScene(3);
+    }
 }
